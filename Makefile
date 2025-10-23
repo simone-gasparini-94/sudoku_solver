@@ -1,5 +1,5 @@
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror -Iinc
+CFLAGS	= -Wall -Wextra -Werror -Iinc -Ilibft/inc
 
 BIN		= sudoku_solver
 OBJ_DIR	= obj

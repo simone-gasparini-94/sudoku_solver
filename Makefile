@@ -1,7 +1,7 @@
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror -Iinc
 
-BIN		= sudoku
+BIN		= sudoku_solver
 OBJ_DIR	= obj
 
 SRCS	= src/main.c		\

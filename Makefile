@@ -8,11 +8,12 @@ SRCS	= src/main.c		\
 		  src/parse.c
 
 OBJS    = $(SRCS:src/%.c=$(OBJ_DIR)/%.o)
+LIBFT	= -Llibft -lft
 
 all: $(BIN)
 
 $(BIN): $(OBJS)
-	@$(CC) $(CFLAGS) -o $@ $^ 
+	@$(CC) $(CFLAGS) -o $@ $^ $(LIBFT)
 
 $(OBJ_DIR)/%.o: src/%.c
 	@mkdir -p $(dir $@)

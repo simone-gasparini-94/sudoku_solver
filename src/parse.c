@@ -4,8 +4,11 @@
 #include <string.h>
 #include <unistd.h>
 #include <errno.h>
+#include "parse.h"
+#include "get_next_line.h"
 
 static char	*create_string_with_path(char *s);
+static void	populate_grid(int grid[GRID_SIZE][GRID_SIZE], int fd);
 
 int	check_argc(int argc)
 {
@@ -17,7 +20,7 @@ int	check_argc(int argc)
 	return (0);
 }
 
-int	parse_file(char *s)
+int	parse_file(int grid[GRID_SIZE][GRID_SIZE], char *s)
 {
 	char	*str;
 	int		fd;
@@ -29,6 +32,7 @@ int	parse_file(char *s)
 		fprintf(stderr, "%s: %s\n", s, strerror(errno));
 		return (1);
 	}
+	populate_grid(grid, fd);
 	close(fd);
 	return (0);
 }
@@ -51,4 +55,36 @@ static char	*create_string_with_path(char *s)
 	strcat(new, s);
 	free(path);
 	return (new);
+}
+
+static void	populate_grid(int grid[GRID_SIZE][GRID_SIZE], int fd)
+{
+	char	*s;
+	size_t	i, j;
+
+	i = 0;
+	while (i < GRID_SIZE)
+	{
+		s = get_next_line(fd);
+		j = 0;
+		while (j < GRID_SIZE)
+		{
+			grid[i][j] = s[j] - '0';
+			j++;
+		}
+		free(s);
+		i++;
+	}
+	i = 0;
+	while (i < GRID_SIZE)
+	{
+		j = 0;
+		while (j < GRID_SIZE)
+		{
+			printf("%d ", grid[i][j]);
+			j++;
+		}
+		printf("\n");
+		i++;
+	}
 }

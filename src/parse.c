@@ -5,20 +5,25 @@
 #include <unistd.h>
 #include <errno.h>
 
-int	main(int argc, char *argv[])
+int	check_argc(int argc)
 {
-	int	fd;
-
 	if (argc != 2)
 	{
 		fprintf(stderr, "Wrong number of arguments\n");
 		return (1);
 	}
-	fd = open(argv[1], O_RDONLY);
+	return (0);
+}
+
+int	parse_file(char *s)
+{
+	int	fd;
+
+	fd = open(s, O_RDONLY);
 	if (fd == -1)
 	{
-		fprintf(stderr, "%s: %s\n", argv[1], strerror(errno));;
-		return (2);
+		fprintf(stderr, "%s: %s\n", s, strerror(errno));
+		return (1);
 	}
 	close(fd);
 }

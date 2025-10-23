@@ -6,4 +6,4 @@ Sudoku solver that uses backtracking.
 
 `./sudoku file.txt`
 
-Replace `file.txt` with a valid file.
+Replace `file.txt` with one of the files in the `assets` directory.

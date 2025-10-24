@@ -6,6 +6,7 @@ void	print_grid(int grid[GRID_SIZE][GRID_SIZE])
 	size_t	i;
 	size_t	j;
 
+	printf("\n");
 	i = 0;
 	while (i < GRID_SIZE)
 	{

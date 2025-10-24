@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include "parse.h"
 #include "print.h"
+#include <unistd.h>
 
 static bool	is_valid(int grid[GRID_SIZE][GRID_SIZE], int row, int col, int n);
 
@@ -29,6 +30,8 @@ void	solve(int grid[GRID_SIZE][GRID_SIZE], int idx)
 			if (is_valid(grid, row, col, n) == true)
 			{
 				grid[row][col] = n;
+				print_grid(grid);
+				usleep(200 * 1000);
 				solve(grid, idx + 1);
 				grid[row][col] = 0;
 			}

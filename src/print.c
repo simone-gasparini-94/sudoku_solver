@@ -13,7 +13,10 @@ void	print_grid(int grid[GRID_SIZE][GRID_SIZE])
 		j = 0;
 		while (j < GRID_SIZE)
 		{
-			printf("%d ", grid[i][j]);
+			if (grid[i][j] == 0)
+				printf("\033[90m%d \033[0m", grid[i][j]);
+			else
+				printf("%d ", grid[i][j]);
 			j++;
 		}
 		printf("\n");

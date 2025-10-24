@@ -1,9 +1,11 @@
+#include <ctype.h>
+#include <errno.h>
 #include <fcntl.h>
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include <errno.h>
 #include "parse.h"
 #include "print.h"
 #include "get_next_line.h"
@@ -76,7 +78,7 @@ static int	populate_grid(int grid[GRID_SIZE][GRID_SIZE], int fd)
 		j = 0;
 		while (j < GRID_SIZE)
 		{
-			if (s[j] == '\0')
+			if (isdigit(s[j]) == false)
 				return (1);
 			grid[i][j] = s[j] - '0';
 			j++;

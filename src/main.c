@@ -1,4 +1,5 @@
 #include "parse.h"
+#include "solve.h"
 
 int	main(int argc, char *argv[])
 {

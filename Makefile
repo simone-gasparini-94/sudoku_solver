@@ -6,6 +6,7 @@ OBJ_DIR	= obj
 
 SRCS	= src/main.c		\
 		  src/parse.c		\
+		  src/print.c		\
 		  src/solve.c
 
 OBJS    = $(SRCS:src/%.c=$(OBJ_DIR)/%.o)

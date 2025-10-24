@@ -1,6 +1,7 @@
 ## Description
 
 Sudoku solver that uses backtracking.
+
 The backtracking process is visualized by displaying the grid each time a new number is placed.
 ## How to run
 

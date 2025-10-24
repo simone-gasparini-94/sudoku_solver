@@ -5,7 +5,8 @@ BIN		= sudoku_solver
 OBJ_DIR	= obj
 
 SRCS	= src/main.c		\
-		  src/parse.c
+		  src/parse.c		\
+		  src/solve.c
 
 OBJS    = $(SRCS:src/%.c=$(OBJ_DIR)/%.o)
 LIBFT	= -Llibft -lft

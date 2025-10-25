@@ -8,11 +8,13 @@ The backtracking process is visualized by displaying the grid each time a new nu
 ### 1. Compile the `libft` library
 
 `cd libft`
+
 `make`
 
 ### 2. Compile the program
 
 `cd ..`
+
 `make`
 
 ### 3. Run the program
